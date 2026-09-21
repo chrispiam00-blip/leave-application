@@ -10,20 +10,20 @@
 
     <h1>Leave Application Form</h1>
 
-    <form onsubmit="submitForm(event)">
+    <form id="leaveForm" onsubmit="submitForm(event)">
 
     <label>Employee Name:</label>
     <input  type="text">
 
     <br><br>
 
-<label>Position:</label>
-<input type="text">
+<label>Employee Name:</label>
+<input type="text" id="employeeName">
 
     <br><br>
 
 <label>Leave Type:</label>
-<select>
+<select id="leaveType">
     <option>Vacation Leave</option>
     <option>Sick Leave</option>
 </select>
@@ -36,12 +36,11 @@
     <br><br>
 
 <label>End Date:</label>
-<input type="date">
-
+<input type="date" id="endDate">
     <br><br>
 
 <label>Reason for Leave:</label><br>
-<textarea rows="4" cols="40"></textarea>
+<textarea id="reason" rows="4" cols="40"></textarea>
 
     <br><br>
 
@@ -52,7 +51,19 @@
     <script>
 function submitForm(event) {
     event.preventDefault();
-    alert("Leave application submitted successfully!");
+
+    let application = {
+        employeeName: document.getElementById("employeeName").value,
+        position: document.getElementById("position").value,
+        leaveType: document.getElementById("leaveType").value,
+        startDate: document.getElementById("startDate").value,
+        endDate: document.getElementById("endDate").value,
+        reason: document.getElementById("reason").value
+    };
+
+    localStorage.setItem("leaveApplication", JSON.stringify(application));
+
+    alert("Leave application saved successfully!");
 }
 </script>
 
