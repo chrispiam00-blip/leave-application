@@ -74,8 +74,11 @@ document.getElementById("leaveForm").addEventListener("submit", function(event) 
     alert("Application submitted and saved successfully!");
 });
 
-   function viewApplication() {
+  function viewApplication() {
     const saved = localStorage.getItem("leaveApplication");
+
+    alert(saved);
+}
 
     if (!saved) {
         alert("No saved application found.");
