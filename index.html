@@ -129,7 +129,6 @@
 </form>
 
 <script>
-    
 document.getElementById("leaveForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -148,7 +147,7 @@ document.getElementById("leaveForm").addEventListener("submit", function(event) 
 });
 
    function viewApplication() {
-    const saved = localStorage.getItem("leaveApplication");
+    alert("View button is working!");
 
     if (!saved) {
         alert("No saved application found.");
