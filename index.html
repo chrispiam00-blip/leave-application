@@ -73,6 +73,26 @@ document.getElementById("leaveForm").addEventListener("submit", function(event) 
 
     alert("Application submitted and saved successfully!");
 });
+
+    function viewApplication() {
+    const saved = localStorage.getItem("leaveApplication");
+
+    if (!saved) {
+        alert("No saved application found.");
+        return;
+    }
+
+    const application = JSON.parse(saved);
+
+    alert(
+        "Employee Name: " + application.employeeName +
+        "\nPosition: " + application.position +
+        "\nLeave Type: " + application.leaveType +
+        "\nStart Date: " + application.startDate +
+        "\nEnd Date: " + application.endDate +
+        "\nReason: " + application.reason
+    );
+}
 </script>
 
 </body>
