@@ -59,7 +59,19 @@
 <script>
 document.getElementById("leaveForm").addEventListener("submit", function(event) {
     event.preventDefault();
-    alert("Application submitted successfully!");
+
+    const application = {
+        employeeName: document.getElementById("employeeName").value,
+        position: document.getElementById("position").value,
+        leaveType: document.getElementById("leaveType").value,
+        startDate: document.getElementById("startDate").value,
+        endDate: document.getElementById("endDate").value,
+        reason: document.getElementById("reason").value
+    };
+
+    localStorage.setItem("leaveApplication", JSON.stringify(application));
+
+    alert("Application submitted and saved successfully!");
 });
 </script>
 
