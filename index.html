@@ -74,7 +74,7 @@ document.getElementById("leaveForm").addEventListener("submit", function(event) 
     alert("Application submitted and saved successfully!");
 });
 
-    function viewApplication() {
+   function viewApplication() {
     const saved = localStorage.getItem("leaveApplication");
 
     if (!saved) {
@@ -84,14 +84,12 @@ document.getElementById("leaveForm").addEventListener("submit", function(event) 
 
     const application = JSON.parse(saved);
 
-    alert(
-        "Employee Name: " + application.employeeName +
-        "\nPosition: " + application.position +
-        "\nLeave Type: " + application.leaveType +
-        "\nStart Date: " + application.startDate +
-        "\nEnd Date: " + application.endDate +
-        "\nReason: " + application.reason
-    );
+    document.getElementById("employeeName").value = application.employeeName;
+    document.getElementById("position").value = application.position;
+    document.getElementById("leaveType").value = application.leaveType;
+    document.getElementById("startDate").value = application.startDate;
+    document.getElementById("endDate").value = application.endDate;
+    document.getElementById("reason").value = application.reason;
 }
 </script>
 
