@@ -54,47 +54,10 @@
 
         <br><br>
 
-<button type="button" onclick="viewApplication()">View Saved Application</button>
 
-        
-
-    <script>
-<script>
-function submitForm(event) {
-    event.preventDefault();
-
-    let application = {
-        employeeName: document.getElementById("employeeName").value,
-        position: document.getElementById("position").value,
-        leaveType: document.getElementById("leaveType").value,
-        startDate: document.getElementById("startDate").value,
-        endDate: document.getElementById("endDate").value,
-        reason: document.getElementById("reason").value
-    };
-
-    localStorage.setItem("leaveApplication", JSON.stringify(application));
-
-    alert("Leave application saved successfully!");
-}
-
-function viewApplication() {
-    let application = localStorage.getItem("leaveApplication");
-
-    if (application) {
-        let data = JSON.parse(application);
-
-        alert(
-            "Employee Name: " + data.employeeName +
-            "\nPosition: " + data.position +
-            "\nLeave Type: " + data.leaveType +
-            "\nStart Date: " + data.startDate +
-            "\nEnd Date: " + data.endDate +
-            "\nReason: " + data.reason
-        );
-    } else {
-        alert("No saved application found.");
-    }
-}
+  
+  
+  
 </script>
 
     
