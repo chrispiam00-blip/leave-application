@@ -60,11 +60,10 @@
 </form>
 
 <script>
-function submitForm(event) {
+document.getElementById("leaveForm").addEventListener("submit", function(event) {
     event.preventDefault();
-
     alert("Application submitted successfully!");
-}
+});
 </script>
 
 </body>
