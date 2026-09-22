@@ -47,11 +47,16 @@
 <button type="submit">Submit Application</button>
         <button type="reset">Clear Form</button>
 
+      function submitForm(event) {
+    event.preventDefault();
+    alert("Leave application submitted successfully!");
+}
+
         <br><br>
 
 <button type="button" onclick="viewApplication()">View Saved Application</button>
 
-        </form>
+        
 
     <script>
 <script>
